@@ -1,0 +1,163 @@
+/* Base styles, using a clean, modern font */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #72a3e0, #4c62b5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Main container for the weather app card */
+.weather-card {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect to make it more interactive */
+.weather-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Styling for the search bar section */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+/* Placeholder styling */
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Focus effect on the input field */
+.search-box input:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.search-box button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 16px;
+    color: #fff;
+}
+
+.search-box button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Styling for the weather display area */
+.weather-info {
+    display: none; /* Initially hidden until data is fetched */
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.temperature {
+    font-size: 70px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1;
+}
+
+.description {
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-top: 5px;
+}
+
+.city-date {
+    font-size: 18px;
+    margin-top: 15px;
+    opacity: 0.8;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.detail-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail-item .value {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.detail-item .label {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Error message styling */
+.error-message {
+    color: #ffcccc;
+    font-size: 16px;
+    display: none;
+    margin-top: 20px;
+}
+
+/* Loader styling */
+.loader {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    display: none;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
